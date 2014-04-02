@@ -1,0 +1,12 @@
+http://www.landofbasketball.com/results/2013_2014_scores_full.htm
+
+1) Create .csv file
+2) Replace “INSERT with INSERT
+3) Replace VALUES (","""", with VALUES (‘
+4) Replace ,?, with ‘,’
+5) Replace ,!, with ‘,
+6) Replace “”””, with ‘
+7) Replace ,) with );
+
+
+NOTE: Presented to Christan on March 18
