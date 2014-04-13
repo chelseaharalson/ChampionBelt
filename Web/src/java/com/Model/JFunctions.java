@@ -47,7 +47,7 @@ public class JFunctions {
         try
         {
             Class.forName("org.postgresql.Driver");
-            connect = DriverManager.getConnection("jdbc:postgresql://postgres.cise.ufl.edu/chelsea", "cmetcalf", "cam22391742");
+            connect = DriverManager.getConnection("jdbc:postgresql://postgres.cise.ufl.edu/chelsea", "cmetcalf", “test”);
             statement = connect.createStatement();
             rs = statement.executeQuery(SQL);
         }
