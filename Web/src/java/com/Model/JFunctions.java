@@ -31,7 +31,7 @@ public class JFunctions {
             // This will load the PostgreSQL driver, each DB has its own driver
             Class.forName("org.postgresql.Driver");
             // Setup the connection with the DB
-            connect = DriverManager.getConnection("jdbc:postgresql://postgres.cise.ufl.edu/chelsea", "cmetcalf", "cam22391742");
+            connect = DriverManager.getConnection("jdbc:postgresql://postgres.cise.ufl.edu/chelsea", "cmetcalf", “test”);
             statement = connect.createStatement();
             statement.executeUpdate(SQL);
         }
