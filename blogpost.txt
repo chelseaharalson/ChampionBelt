@@ -1,0 +1,25 @@
+The idea of a regular season championship belt is the following:
+
+At the beginning of a sports season, the reigning team champion posses a belt.
+As the season is played, any team that defeats the team in possession the championship
+belt is the new owner of the championship belt. At the end of the regular season the team
+that posses the belt is the regular season champion.
+
+First I got the data from http://www.landofbasketball.com/results/2013_2014_scores_full.htm.
+
+The steps I did to retrieve the data were probably a bit different than how other students would do it. I copied and pasted the data into Excel. I then created extra columns. I wrote in the form of a SQL statement. For example: INSERT INTO scores(gameDate, team1, team1score, team2, team2score) VALUES( were in one column. I made a .csv file from this and then my next steps were as follows:
+
+1) Replace “INSERT with INSERT
+2) Replace VALUES (","""", with VALUES (‘
+3) Replace ,?, with ‘,’
+4) Replace ,!, with ‘,
+5) Replace “”””, with ‘
+6) Replace ,) with );
+
+I created 3 tables: scores, teams, and games. I inserted all the data into scores, which was my test table. I then inserted team1 into the teams table and inserted the data from the scores table into the games table.
+
+I wrote a recursive SQL statement called winner. How my query works is that it starts off with the team who had the champion belt last. I did a join on winner and games to get the game where the winning team lost. I wrote a function called getWinner2(winner INT, gDate DATE), which shows all the games of the winner after they won the championship belt. Since I want to know when the winner lost, I get the loss after the winning team had the champion belt and I limit it by 1. Lastly, I select from winner, which is a temporary table. I ordered by game date in descending order to give the last one.
+
+I used java JSP for the web interface. Unfortunately, I couldn’t put it on the web server since CISE currently doesn’t support java JSP, but the code for the web part is all on github.
+
+Overall, I had a lot of fun with this project, especially with the web interface. It was pretty cool to take a lot of my random knowledge and actually put together a project that had a bunch of different aspects to it (like parsing the data, writing a recursive query, and then connecting it to a web interface for the user).
